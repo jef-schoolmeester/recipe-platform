@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "plugins": ["react-hooks"],
+  "extends": ["next", "prettier", "eslint:recommended"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "no-unused-vars": "warn"
+  }
+}
