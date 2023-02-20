@@ -6,7 +6,7 @@ import { userCollection } from '@/utils/config'
 import { UserRegisterRequest } from '@/utils/types'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { username, password } = JSON.parse(req.body) as UserRegisterRequest
+  const { username, password } = req.body as UserRegisterRequest
 
   if (!username || !password) {
     res.status(400).json({ message: 'Invalid request' })

@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { compare, genSalt, hash } from 'bcrypt'
+import { compare } from 'bcrypt'
 
 import { UserLoginRequest } from '@/utils/types'
 import { userCollection } from '@/utils/config'
 import { signToken } from '@/utils/services/auth/signToken'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { username, password } = JSON.parse(req.body) as UserLoginRequest
+  const { username, password } = req.body as UserLoginRequest
 
   if (!username || !password) {
     res.status(400).json({ message: 'BODY' })

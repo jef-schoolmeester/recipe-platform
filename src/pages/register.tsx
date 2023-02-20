@@ -22,6 +22,9 @@ const Register = () => {
     const registerResponse = await fetch('/api/auth/register', {
       body: JSON.stringify(body),
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
     const registerResult = await registerResponse.json()
     if (!registerResult.success) throw new Error('Unexpected error occured')
@@ -29,6 +32,9 @@ const Register = () => {
     const loginResponse = await fetch('/api/auth/login', {
       body: JSON.stringify(body),
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
     const loginResult = await loginResponse.json()
     login(loginResult)

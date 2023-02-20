@@ -1,6 +1,8 @@
-import { useAppContext } from '@/utils/context'
 import { useRouter } from 'next/router'
+
 import { useState } from 'react'
+
+import { useAppContext } from '@/utils/context'
 
 const Login = () => {
   const { login } = useAppContext()
@@ -21,6 +23,9 @@ const Login = () => {
     const response = await fetch('/api/auth/login', {
       body: JSON.stringify(body),
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
     const loginResult = await response.json()
     login(loginResult)
