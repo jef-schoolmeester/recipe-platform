@@ -39,3 +39,27 @@ export interface AppContext {
   logout: () => void
   auth: AuthContext
 }
+
+// Recipes
+
+export interface Ingredient {
+  name: string
+  quantity: number
+  measurement?: string
+}
+export type Ingredients = Array<Ingredient>
+
+export type Tools = Array<string>
+
+export interface Step {
+  description: string
+}
+export type Steps = Array<Step>
+
+export interface Recipe {
+  name: string
+  description: string
+  ingredients: Ingredients
+  tools: Tools
+  steps: Steps
+}
