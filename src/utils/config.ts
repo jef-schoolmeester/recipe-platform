@@ -13,5 +13,6 @@ const mongoDBClient = new MongoClient(MONGODB_URI)
 const database = mongoDBClient.db('recipedb')
 
 export const userCollection = database.collection('users')
+export const recipeCollection = database.collection('recipes')
 
 export const JWT_SECRET = process.env.JWT_SECRET
